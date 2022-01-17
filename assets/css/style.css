@@ -2,4 +2,45 @@
     box-sizing: border-box;
   }
 
-  
+  :root {
+    --primary: #ededed;
+    --secondary: #94aeb3;
+    --tertiary: #626364;
+    --grey: #333;
+    font-size: 62.5%;
+  }
+
+body {
+    background: var(--primary);
+    color: var(--grey);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+header {
+    background: var(--secondary);
+    padding: 30px 25px;
+    border-bottom: 5px solid var(--secondary);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+header a {
+    color: var(--grey);
+    margin: 5px 0 20px; 
+    font-size: 1.5rem;
+        
+}
+
+header p {
+    color: var(--tertiary);
+    margin: 5px 0 20px;
+    font-size: 2rem;
+   
+
+}

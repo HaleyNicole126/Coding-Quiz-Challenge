@@ -51,12 +51,25 @@ var myQuestions = [
     },
 ];
 
-setInterval(myTimer, 1000);
+// setInterval(myTimer, 1000);
 
-function myTimer() {
-    const d = new Date();
-    document.getElementById("timer").innerHTML = d.toLocaleTimeString();
-}
+// function myTimer() {
+//     const d = new Date();
+//     document.getElementById("timer").innerHTML = d.toLocaleTimeString();
+// }
+
+var counter = 75
+var countdown = function() {
+    console.log(counter);
+    document.getElementById("timer").innerHTML = "Time: " + counter.toLocaleString();
+    counter--;
+    if(counter===0) {
+        console.log("Game Over!");
+        clearInterval(startCountdown);
+    };
+};
+
+var startCountdown = setInterval(countdown, 1000);
 
 var quizContainer = document.getElementById('quiz');
 var resultsContainer = document.getElementById('results');
