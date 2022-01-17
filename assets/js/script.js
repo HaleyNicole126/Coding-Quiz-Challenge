@@ -121,7 +121,8 @@ function startQuiz(){
 }
 
 // check answer
-function checkAnswer(answer){
+function checkAnswer(){
+    var answer = document.getElementsByClassName("answer").value;
     if(answer == myQuestions[runningQuestion].correctAnswer) {
         answerIsCorrect();
     }else{
@@ -129,13 +130,12 @@ function checkAnswer(answer){
         // subtract 10s 
         answerIsWrong();
     }
-    count = 0;
     if(runningQuestion < lastQuestion){
         runningQuestion++;
         renderQuestion();
     }else{
         clearInterval(counter);
-        scoreRender();
+
     }
 }
 
