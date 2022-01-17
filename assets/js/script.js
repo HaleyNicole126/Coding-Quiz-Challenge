@@ -51,6 +51,20 @@ var myQuestions = [
     },
 ];
 
+setInterval(myTimer, 1000);
+
+function myTimer() {
+    const d = new Date();
+    document.getElementById("timer").innerHTML = d.toLocaleTimeString();
+}
+
+var quizContainer = document.getElementById('quiz');
+var resultsContainer = document.getElementById('results');
+var startButton = document.getElementById('start');
+
+var buttonEl = document.querySelector("#start-quiz");
+
+generateQuiz(myQuestions, quizContainer, resultsContainer, startButton) 
 
 function generateQuiz(questions, quizContainer, resultsContainer, submitButton) {
 
@@ -66,7 +80,7 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton) 
     showQuestions(questions, quizContainer);
 
     // when user clicks submit, show results
-    submitButton.onclick = function(){
+    startButton.onClick = function(){
         showResults(questions, quizContainer, resultsContainer);
     }
 } 
