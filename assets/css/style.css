@@ -44,6 +44,11 @@ header p {
    
 
 }
+.quiz{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
 .question-container{
     margin: 10px;
@@ -58,11 +63,11 @@ header p {
 .answer-container{
     display: flex;
     flex-direction: column;
-    justify-content: center; 
+    justify-content: space-between; 
     margin: 10px;
     padding: 5px;
     width: 80vw;
-    height: 20vh;
+    height: auto;
     background-color: #9eb1b3;   
 }
 
@@ -73,8 +78,16 @@ header p {
     font-size: larger;
     background-color: lightskyblue;
     border-radius: 25%;
+    justify-content: center;
 }
 
 .answer:hover{
     background-color: lightgoldenrodyellow;
+}
+
+.results{
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+
 }
