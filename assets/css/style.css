@@ -49,7 +49,7 @@ header p {
     margin: 10px;
     padding: 5px;
     width: 80vw;
-    height: 10vh;
+    height: auto;
     background-color: #c7dddf;
     font-size: x-large;
     text-align: center;
@@ -57,7 +57,8 @@ header p {
 
 .answer-container{
     display: flex;
-    justify-content: space-around; 
+    flex-direction: column;
+    justify-content: center; 
     margin: 10px;
     padding: 5px;
     width: 80vw;

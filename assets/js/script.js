@@ -79,10 +79,10 @@ var startButton = document.getElementById('start');
 
 var buttonEl = document.querySelector("#start-quiz");
 
-
+var counter = 75
 // function for timer 
 function startTimer(){
-    var counter = 75
+    
     var countdown = function() {
         document.getElementById("timer").innerHTML = "Time: " + counter.toLocaleString();
         counter--;
@@ -103,10 +103,10 @@ function renderQuestion(){
     let q = myQuestions[runningQuestion];
 
     question.innerHTML = "<p>"+ q.question +"</p>";
-    op1.innerHTML = q.answers[0];
-    op2.innerHTML = q.answers[1];
-    op3.innerHTML = q.answers[2];
-    op4.innerHTML = q.answers[3];
+    op1.innerHTML = q.answers[1];
+    op2.innerHTML = q.answers[2];
+    op3.innerHTML = q.answers[3];
+    op4.innerHTML = q.answers[4];
 }
 
 buttonEl.addEventListener("click", startQuiz);
@@ -117,12 +117,12 @@ function startQuiz(){
     renderQuestion();
     // start the timer when the quiz starts
     startTimer();
-
+   
 }
 
 // check answer
 function checkAnswer(answer){
-    if( answer == myQuestions[runningQuestion].correctAnswer) {
+    if(answer == myQuestions[runningQuestion].correctAnswer) {
         answerIsCorrect();
     }else{
         // answer is wrong
@@ -149,83 +149,3 @@ function answerIsWrong(){
     counter -10;
     document.getElementById("results").innerHTML = "Wrong!";
 }
-
-// function buildIntro(){
-
-// }
-
-// function buildQuiz(){
-//     function iterate(id){
-//         id = 0
-
-//     // getting the questions
-//     var question = document.getElementById("question");
-//     // setting the question text
-//     question.innerHTML = myQuestions[id].question;
-
-//     // getting the answers
-//     var op1 = document.getElementById("op1");
-//     var op2 = document.getElementById("op2");
-//     var op3 = document.getElementById("op3");
-//     var op4 = document.getElementById("op4");
-
-//     // providing answer text
-//     op1.innerText = myQuestions[id].answers[0];
-//     op2.innerText = myQuestions[id].answers[1];
-//     op3.innerText = myQuestions[id].answers[2];
-//     op1.innerText = myQuestions[id].answers[3];
-
-//     }
-// }
-
-// function showResults(){}
-
-// buildQuiz();
-
-
-
-
-// generateQuiz(myQuestions, quizContainer, resultsContainer, startButton) 
-
-// function generateQuiz(questions, quizContainer, resultsContainer, submitButton) {
-
-//     function showQuestions(questions, quizContainer) {
-//         // code will go here
-//         var output = [];
-//         var answers;
-
-//         // for each question
-//         for(var i=0; i<questions.length; i++) {
-
-//             // reset the list of answers
-//             answers = [];
-
-//             for (number in questions[i].answers){
-//                 answers.push(
-//                     '<label>'
-//                         + '<input type="button" name="question'+i+'" value="'+number+'">'
-//                         + number + ': '
-//                         + questions[i].answers[number]
-// 				    + '</label>'
-//                 );
-//             }
-//             output.push(
-//                 '<div class="question">' + questions[i].question + '</div>'
-//                 + '<div class="answers">' + answers.join('') + '</div>'
-//             );
-//         }
-//         quizContainer.innerHTML = output.join('');
-//     }
-
-//     // function showResults(questions, quizContainer, resultsContainer) {
-//     //     // code will go here
-//     // }
-
-//     // show the questions
-//     showQuestions(questions, quizContainer);
-
-// //     // when user clicks submit, show results
-// //     startButton.onClick = function(){
-// //         showResults(questions, quizContainer, resultsContainer);
-// //     }
-// } 
